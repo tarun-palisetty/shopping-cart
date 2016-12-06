@@ -41,6 +41,14 @@ public class DefaultShoppingCartTest {
 		assertTrue(shoppingCart.removeProduct("001"));
 	}
 	
+	@Test
+	public void testGetProductFromCart() throws ProductNotFoundException{
+		shoppingCart.addProduct(new Product("001", "Apples", 3, 1.80d));
+		shoppingCart.addProduct(new Product("002", "Oranges", 3, 1.80d));
+		Product product = shoppingCart.getProductFromCart("002");
+		assertEquals("002", product.getProductId());
+	}
+	
 	@Test(expected=ProductNotFoundException.class)
 	public void testProductNotFoundException() throws ProductNotFoundException{
 		shoppingCart.addProduct(new Product("001", "Apples", 3, 1.80d));

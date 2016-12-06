@@ -19,4 +19,6 @@ public interface ShoppingCart {
 
 	double getCartPrice();
 
+	Product getProductFromCart(String pId) throws ProductNotFoundException;
+
 }

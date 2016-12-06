@@ -69,4 +69,15 @@ public class DefaultShoppingCart implements ShoppingCart{
 		return price;
 	}
 
+
+	public Product getProductFromCart(String pId) throws ProductNotFoundException {
+		if(productMap.containsKey(pId)){
+			return productMap.get(pId);
+		}
+		else{
+			throw new ProductNotFoundException("Product with id: "+pId+" is not found!");
+		}
+			
+	}
+
 }
