@@ -1,5 +1,7 @@
 package com.test.shop;
 
+import com.test.shop.model.Product;
+
 /**
  * @author tarun
  *
@@ -8,6 +10,6 @@ package com.test.shop;
  */
 public interface ShoppingCart {
 
-	boolean addProduct();
+	boolean addProduct(Product p);
 
 }
