@@ -31,7 +31,13 @@ public class DefaultShoppingCartTest {
 	public void testAddMultipleProducts(){
 		shoppingCart.addProduct(new Product("001", "Apples", 3, 1.80d));
 		assertTrue(shoppingCart.addProduct(new Product("001", "Apples", 4, 2.40d)));
-		
+	}
+	
+	@Test
+	public void testRemoveProduct(){
+		shoppingCart.addProduct(new Product("001", "Apples", 3, 1.80d));
+		shoppingCart.addProduct(new Product("002", "Oranges", 3, 1.80d));
+		assertTrue(shoppingCart.removeProduct("001"));
 	}
 
 }

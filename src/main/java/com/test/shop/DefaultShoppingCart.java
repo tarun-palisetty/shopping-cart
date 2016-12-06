@@ -32,4 +32,13 @@ public class DefaultShoppingCart implements ShoppingCart{
 		return false;
 	}
 
+
+	public boolean removeProduct(String productId) {
+		if(productMap.containsKey(productId)){
+			productMap.remove(productId);
+			return true;
+		} // remove the product if Id is present
+		return false;
+	}
+
 }

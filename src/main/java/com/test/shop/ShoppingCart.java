@@ -12,4 +12,6 @@ public interface ShoppingCart {
 
 	boolean addProduct(Product p);
 
+	boolean removeProduct(String productId);
+
 }
