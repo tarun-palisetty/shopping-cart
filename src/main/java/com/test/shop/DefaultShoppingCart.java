@@ -1,6 +1,8 @@
 package com.test.shop;
 
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 import com.test.shop.exception.ProductNotFoundException;
@@ -49,9 +51,22 @@ public class DefaultShoppingCart implements ShoppingCart{
 		return productMap.size();
 	}
 
+	
+	public Collection<Product> getCartDetails(){
+		return productMap.values();
+	}
 
+	/**
+	 * Calculate the total cart price
+	 * 
+	 * */
 	public double getCartPrice() {
-		return 0;
+		double price = 0.0d;
+		Iterator<Product> iterator = getCartDetails().iterator();
+		while(iterator.hasNext()){
+			price+=iterator.next().getPrice();
+		}
+		return price;
 	}
 
 }

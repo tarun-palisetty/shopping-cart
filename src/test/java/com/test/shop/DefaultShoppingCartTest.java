@@ -60,7 +60,7 @@ public class DefaultShoppingCartTest {
 		shoppingCart.addProduct(new Product("001", "Apples", 3, 1.80d));
 		shoppingCart.addProduct(new Product("002", "Oranges", 3, 1.80d));
 		shoppingCart.addProduct(new Product("001", "Apples", 2, 1.20d));
-		assertEquals(4.8d, shoppingCart.getCartPrice());
+		assertEquals(4.8d, shoppingCart.getCartPrice(), 2);
 	}
 
 }
