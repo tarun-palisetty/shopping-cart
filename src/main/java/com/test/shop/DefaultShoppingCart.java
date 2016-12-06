@@ -7,6 +7,7 @@ import java.util.Map;
 
 import com.test.shop.exception.ProductNotFoundException;
 import com.test.shop.model.Product;
+import com.test.shop.offers.ProductOffers;
 
 /**
  * @author tarun
@@ -14,6 +15,8 @@ import com.test.shop.model.Product;
  * Shopping cart implementation
  */
 public class DefaultShoppingCart implements ShoppingCart{
+	
+	private ProductOffers productOffers;
 	
 	public Map<String, Product> productMap;
 	
@@ -64,7 +67,9 @@ public class DefaultShoppingCart implements ShoppingCart{
 		double price = 0.0d;
 		Iterator<Product> iterator = getCartDetails().iterator();
 		while(iterator.hasNext()){
-			price+=iterator.next().getPrice();
+			Product product = iterator.next();
+			price+=applyOffers(product);
+			//price+=p.getPrice();
 		}
 		return price;
 	}
@@ -78,6 +83,17 @@ public class DefaultShoppingCart implements ShoppingCart{
 			throw new ProductNotFoundException("Product with id: "+pId+" is not found!");
 		}
 			
+	}
+	
+	private double applyOffers(Product p){
+		productOffers = new ProductOffers();
+		if(p.getProductName().equals("Apples")){
+			return productOffers.buyOneGetOneOffer(p.getQuantity(), 0.60d);
+		}
+		else if(p.getProductName().equals("Oranges")){
+			return productOffers.threeForTwoOffer(p.getQuantity(), 0.25d);
+		}
+		return p.getPrice();
 	}
 
 }
