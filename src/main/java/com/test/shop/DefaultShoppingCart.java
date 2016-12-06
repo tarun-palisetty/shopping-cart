@@ -7,4 +7,8 @@ package com.test.shop;
  */
 public class DefaultShoppingCart implements ShoppingCart{
 
+	public boolean addProduct() {
+		return false;
+	}
+
 }

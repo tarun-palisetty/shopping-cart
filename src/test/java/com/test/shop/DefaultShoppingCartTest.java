@@ -23,7 +23,7 @@ public class DefaultShoppingCartTest {
 
 	@Test
 	public void testAddProduct() {
-		fail("Not yet implemented");
+		assertFalse(shoppingCart.addProduct());
 	}
 
 }

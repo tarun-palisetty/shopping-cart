@@ -8,4 +8,6 @@ package com.test.shop;
  */
 public interface ShoppingCart {
 
+	boolean addProduct();
+
 }
