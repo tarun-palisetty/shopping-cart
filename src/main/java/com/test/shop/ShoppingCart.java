@@ -1,5 +1,6 @@
 package com.test.shop;
 
+import com.test.shop.exception.ProductNotFoundException;
 import com.test.shop.model.Product;
 
 /**
@@ -12,6 +13,6 @@ public interface ShoppingCart {
 
 	boolean addProduct(Product p);
 
-	boolean removeProduct(String productId);
+	boolean removeProduct(String productId) throws ProductNotFoundException;
 
 }

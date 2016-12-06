@@ -3,6 +3,7 @@ package com.test.shop;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.test.shop.exception.ProductNotFoundException;
 import com.test.shop.model.Product;
 
 /**
@@ -33,12 +34,14 @@ public class DefaultShoppingCart implements ShoppingCart{
 	}
 
 
-	public boolean removeProduct(String productId) {
+	public boolean removeProduct(String productId) throws ProductNotFoundException {
 		if(productMap.containsKey(productId)){
 			productMap.remove(productId);
 			return true;
 		} // remove the product if Id is present
-		return false;
+		else{
+			throw new ProductNotFoundException("Product with id: "+productId+" is not found!");
+		}
 	}
 
 }
