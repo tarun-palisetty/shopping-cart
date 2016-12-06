@@ -15,4 +15,8 @@ public interface ShoppingCart {
 
 	boolean removeProduct(String productId) throws ProductNotFoundException;
 
+	int getProductsCount();
+
+	double getCartPrice();
+
 }

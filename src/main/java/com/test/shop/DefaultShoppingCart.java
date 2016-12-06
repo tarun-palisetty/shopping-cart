@@ -44,4 +44,14 @@ public class DefaultShoppingCart implements ShoppingCart{
 		}
 	}
 
+
+	public int getProductsCount() {
+		return productMap.size();
+	}
+
+
+	public double getCartPrice() {
+		return 0;
+	}
+
 }
