@@ -65,10 +65,11 @@ public class DefaultShoppingCartTest {
 	
 	@Test
 	public void testgetCartPrice(){
-		shoppingCart.addProduct(new Product("001", "Apples", 3, 1.80d));
-		shoppingCart.addProduct(new Product("002", "Oranges", 3, 1.80d));
+		shoppingCart.addProduct(new Product("001", "Apples", 3, 1.80d)); 
+		shoppingCart.addProduct(new Product("002", "Oranges", 3, 0.75d)); 
 		shoppingCart.addProduct(new Product("001", "Apples", 2, 1.20d));
-		assertEquals(4.8d, shoppingCart.getCartPrice(), 2);
+		assertEquals(2.30d, shoppingCart.getCartPrice(), 1);
 	}
-
+	
+	
 }
