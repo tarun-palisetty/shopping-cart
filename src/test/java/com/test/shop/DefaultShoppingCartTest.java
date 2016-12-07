@@ -71,5 +71,14 @@ public class DefaultShoppingCartTest {
 		assertEquals(2.30d, shoppingCart.getCartPrice(), 1);
 	}
 	
+	@Test
+	public void testgetCart2Price(){
+		shoppingCart.addProduct(new Product("001", "Apples", 1, 0.60d)); 
+		shoppingCart.addProduct(new Product("001", "Apples", 1, 0.60d)); 
+		shoppingCart.addProduct(new Product("002", "Oranges", 1, 0.25d)); 
+		shoppingCart.addProduct(new Product("001", "Apples", 1, 0.60d));
+		assertEquals(1.45d, shoppingCart.getCartPrice(), 1);
+	}
+	
 	
 }
