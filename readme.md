@@ -2,7 +2,7 @@
 
 This is an implementation of a simple shopping cart application.
 The implementation is done in Java.
-The application has basic shopping cart operations.
+This sample application has basic shopping cart operations like.
 
 1. addProduct
 
